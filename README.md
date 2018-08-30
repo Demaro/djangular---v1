@@ -1,3 +1,23 @@
+# Prueba Sistemas Expertos - Frontend Developer
+
+Este Proyecto esta desarrollado con Angular 6.
+
+# Comenzar
+
+1 - git clone https://github.com/Demaro/Prueba-SEIS.git test-seis
+
+2 - cd test-seis 
+
+3 - npm install 
+
+4 - ng serve
+
+5 - ingrese sesion como admin.
+
+6 - filtre tabla dinamica por nombre de la cuenta.
+
+7 - enjoy! :)
+
 # Ng6
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
