@@ -12,7 +12,11 @@ Este Proyecto esta desarrollado con Angular 6.
 
 4 - ng serve
 
-5 - enjoy! :)
+5 - ingrese sesion como admin.
+
+6 - filtre tabla dinamica por nombre de la cuenta.
+
+7 - enjoy! :)
 
 # Ng6
 
