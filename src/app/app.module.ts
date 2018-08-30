@@ -9,7 +9,6 @@ import { User } from './models/user';
 import { AuthenticationService} from './services/authentication.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -40,7 +39,6 @@ import { AccountlistComponent } from './accountlist/accountlist.component';
     ServicesComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent,
     AuthSaveComponent,
     SnackbarComponent,
     AccountlistComponent,

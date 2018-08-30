@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import { AccountlistService } from '../services/accountlist.service';
 import { MatPaginator, MatTableDataSource} from '@angular/material';
 import { AuthenticationService } from '../services/authentication.service';
+import { Observable } from 'rxjs/internal/Observable';
 
 
 @Component({
@@ -10,34 +11,41 @@ import { AuthenticationService } from '../services/authentication.service';
   styleUrls: ['./accountlist.component.scss']
 })
 export class AccountlistComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'codigo', 'codigo_completo', 'nombre', 'descripcion','level', 'parent' ];
+  displayedColumns: string[] = ['id', 'codigo', 'codigo_completo', 'nombre','level', 'parent' ];
   dataSource: any;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+
+
   constructor(public auth: AuthenticationService, private accountListService: AccountlistService) {
     
   }
 
   ngOnInit() {
 
+    // If autenticated:
     if(this.auth.authenticated == true){
-      this.accountListService.getlist().subscribe(res => {
+
+      // servicio Observable listas de cuentas API Django SEIS 
+      this.accountListService.getlist().subscribe(res => { 
         this.accountListService.listAccount = res
   
+        // Inicia paginacion para Tabla cargada con json guardado en ListAccount
         this.dataSource = new MatTableDataSource(this.accountListService.listAccount);
         this.dataSource.paginator = this.paginator;
       })
   
     }
-
-
-    
-
-
   }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
 
 }

@@ -14,28 +14,30 @@ export class AuthenticationService {
     newRegex_reg = "";
     newRegex_reg2 = "";
    
-    error_login: boolean = false;
-  
-    error_reg: boolean = false;
-  
-    error_loggin_mess = "";
-    getlisproduct = []
 
+    // control de errores api login auth:
+    error_login: boolean = false;
+    error_reg: boolean = false;
+    error_loggin_mess = "";
+
+    // principal boolean para autenticar 
     authenticated: boolean = false;
 
+    // contiene datos que retorna api rest-auth-login
     userCurrent: any;
-    sender: boolean = false;
+
+    URL_BASE = "http://api-erp-dev.medinet.cl";
 
 
-    URL_BASE = "http://api-erp-dev.medinet.cl"
-
+    // http 1 envio de datos, metodo POST, obtiene data, token y guarda en localStorage.
+    // 
     
     login(username: string, password: string) {
         return this.http.post<any>(this.URL_BASE + '/rest-auth/login/', { username: username, password: password })
             .pipe(map(user => {
-                // login successful if there's a jwt token in the response
+                // login successful si esta jwt token en response:
                 if (user && user.token) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
+                    // // detalle del json guardando en local storage, sesion en navegador, user logged a page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
                     this.authenticated = true;
                     
@@ -44,14 +46,6 @@ export class AuthenticationService {
                 
                 return user;
             }));
-    }
-
-    register(first_name: string, username: string, email: string, password: string){
-        return this.http.post<any>('http://127.0.0.1:8000/api/usuarios/registrar/',  { first_name: first_name, username: username, email: email, password: password })
-        .pipe(map(user => {
-         
-
-        }));
     }
 
  
@@ -63,6 +57,16 @@ export class AuthenticationService {
         // remove user from local storage to log user out
 
 
-        
     }
+
+
+    /*register(first_name: string, username: string, email: string, password: string){
+        return this.http.post<any>('http://127.0.0.1:8000/api/usuarios/registrar/',  { first_name: first_name, username: username, email: email, password: password })
+        .pipe(map(user => {
+         
+
+        }));
+    }
+
+    */
 }
