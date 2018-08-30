@@ -1,20 +1,139 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<nav data-toggle="collapse" data-target=".nav-collapse" class="navbar navbar-expand-lg navbar-dark dark fixed-top">
+
+    <div class="collapse navbar-collapse order-3 order-lg-2" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['']">Inicio</a></li>
+        </ul>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" [routerLink]="['']"><i class="fa fa-fab fa-connectdevelop fa-lg"></i></a>
+
+    
+  <div *ngIf="auth.authenticated; else notauth" class="d-flex flex-row order-2 order-lg-3">
+
+ 
+
+  <div class="btn-group">
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+          <!--
+      <li class="nav-item">
+          <a [routerLink]="['mi_carrito']" class="nav-link waves-effect waves-light">   {{ productService.count }} 
+            <i class="fa fa-cart-plus fa-lg"></i>
+          </a>
+        </li>
+    -->
+      <button type="button" class="btn btn-success waves-effect- waves-ight dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i>&nbsp;&nbsp; Admin
+      </button>
+      <div class="dropdown-menu dropdown-menu-right">
+        <button  (click)="logout()" [routerLink]="['login']" class="dropdown-item" type="button"> <i class="fas fa-power-off"></i> Cerrar Sesión</button>
+      </div>
+      </ul>
+    </div>
+
+
+    </div>
+    <ng-template #notauth >
+    <div  class="d-flex flex-row order-2 order-lg-3">
+        <ul class="navbar-nav flex-row">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['login']">  Acceder</a>
+            </li>&nbsp;&nbsp;
+            <!--
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['register']">Registrarse</a>
+            </li>
+        -->
+        </ul>
+
+    </div>
+  </ng-template>
+
+</nav>
+
+
+  <div class="container ">
+      <div class="row ">
+          <div class="col-lg-12 col-md-12">
+              
+              <router-outlet></router-outlet>
+
+
+       
+          </div>
+      </div>
+  </div>
+
+
+<!-- Footer -->
+<footer class="page-footer text-center text-md-left font-small stylish-color-dark pt-4 mt-4 dark">
+    
+                   
+                    <hr>
+    
+                    <!--Call to action-->
+                    <div class="text-center py-3">
+                        <ul class="list-unstyled list-inline mb-0">
+                            <li class="list-inline-item">
+                              
+                                <h6 class="mb-1 text-center">
+
+                                    Prueba tecnica Frontend,
+                                    Sistemas Expertos
+                                    <br>
+                                    Angular 6, Material, mdbootstrap, Api REST.
+                                    <br>
+
+
+                                    <br></h6>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.Call to action-->
+    
+                    <hr>
+    
+                    <!--Social buttons-->
+                    <div class="text-center">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a target="_blank" href="https://www.linkedin.com/in/demaro1/" class="btn-floating btn-sm btn-fb mx-1 waves-effect waves-light border-btn">
+                                    <i class="fab fa-linkedin icon-btn"> </i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a target="_blank" href="https://github.com/Demaro" class="btn-floating btn-sm btn-tw mx-1 waves-effect waves-light border-btn">
+                                    <i class="fab fa-github icon-btn"> </i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a target="_blank" href="https://plus.google.com/u/0/112695464327785590720" class="btn-floating btn-sm btn-gplus mx-1 waves-effect waves-light border-btn">
+                                    <i class="fab fa-google-plus icon-btn"> </i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a target="_blank" href="https://www.instagram.com/demaro_create/" class="btn-floating btn-sm btn-dribbble mx-1 waves-effect waves-light border-btn">
+                                    <i class="fab fa-instagram icon-btn"> </i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.Social buttons-->
+    
+                    <!--Copyright-->
+                    <div class="footer-copyright py-3 text-center">
+                        <div class="container-fluid">
+                            © 2017 Copyright:
+                            <a href="#Up"> Demaro Create </a>
+    
+                        </div>
+                    </div>
+                    <!--/.Copyright-->
+    
+                </footer>
+        <!-- Footer -->
+                                 

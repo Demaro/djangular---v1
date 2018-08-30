@@ -1,0 +1,18 @@
+<div *ngIf="this.auth.error_login" class="center">
+    {{ auth.newRegex  }}  
+    
+    </div>
+    <!--
+    {{ error_loggin_mess.replace('{"":["', '').replace('"]}', '')  }}  
+    
+    -->
+    
+    <div *ngIf="this.auth.error_reg" class="center">
+        {{ auth.newRegex_reg2  }}  
+        
+        </div>
+
+        <div *ngIf="this.auth.sender" class="center">
+                {{ gracias  }}  
+                
+                </div>

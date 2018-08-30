@@ -1,0 +1,39 @@
+
+
+<main>
+    <div class="container">
+        <section class="text-center pb-3 my-5">
+            
+            <!--Section heading-->
+            <h1 class="font-weight-bold text-center h1 py-5 wow fadeIn ">Lista de cuentas</h1>
+
+            <div *ngIf="!auth.authenticated">
+              
+              <button type="button" [routerLink]="['login']"  class="btn btn-outline-default wow fadeIn"  data-wow-delay="0.3s" mdbWavesEffect>
+                <i class="fa fa-eye fa-lg"></i> Accede para Ver Lista</button>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+                </div>
+
+
+                <div *ngIf="auth.authenticated">
+                    <app-accountlist ></app-accountlist>
+
+                  </div>
+
+            <!--Grid row-->
+          </section>
+
+
+
+
+</div>
+</main>
+
+
+

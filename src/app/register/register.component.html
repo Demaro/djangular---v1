@@ -1,0 +1,96 @@
+
+<div class="col-sm-6 offset-sm-3">
+        
+        <div class="card wow fadeInDown" style="width: 100%;">
+             
+            <div class="card-body">
+                
+                                <!--Header-->
+                              
+        <h3><i class="fa fa-user-plus"></i> Registro</h3>
+                             
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+        
+            
+                <div class="md-form">
+                    <i class="fa fa-user prefix color"></i>
+                    <input type="text" formControlName="first_name" [mdbValidate]="false"  id="orangeForm-first_name" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" class="form-control" mdbInputDirective>
+                    <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                        <div *ngIf="f.first_name.errors.required" class="error">Este campo es obligatorio</div>
+                    </div>
+                    <label for="orangeForm-first_name">Primer Nombre</label>
+                  </div>
+        
+
+
+                      <div class="md-form">
+                            <i class="fa fa-user prefix color"></i>
+                            <input type="text" formControlName="username" [mdbValidate]="false" id="orangeForm-username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" class="form-control" mdbInputDirective>
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required" class="error">Este campo es obligatorio</div>
+                            </div>
+                            <label for="orangeForm-username">Nombre de Usuario</label>
+                          </div>
+                      
+                    
+                          
+                          <div class="md-form">
+                                <i class="fa fa-envelope prefix color"></i>
+                                <input type="email" formControlName="email" [mdbValidate]="false" id="orangeForm-email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" class="form-control" mdbInputDirective>
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                        <div *ngIf="f.email.errors.required" class="error">Este campo es obligatorio</div>
+                                        <div *ngIf="f.email.errors.pattern" class="error">
+                                        Correo electrónico Incorrecto</div>
+                                    </div>
+                                <label for="orangeForm-email">Correo Electronico</label>
+                              </div>
+                              
+                          
+                      <div class="md-form">
+                            <i class="fa fa-lock prefix color"></i>
+                            <input type="password" formControlName="password" [mdbValidate]="false" id="orangeForm-password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" class="form-control" mdbInputDirective>
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required" class="error">Este campo es obligatorio</div>
+                                    <div *ngIf="f.password.errors.minlength" class="error">
+                                        La contraseña debe tener al menos 6 caracteres</div>
+                                </div>
+                            <label for="orangeForm-password">Contraseña</label>
+                          </div>
+
+                        
+                  
+            </div>
+        
+            <div class="form-group">
+                
+                <br>
+                <button [disabled]="loading" class="btn btn-primary waves-light" mdbWavesEffect>Registrarse</button>
+                <div *ngIf="loading" class="loader white btn-floating btn-lg ">
+                        
+                        </div>
+            
+            </div>
+        </form>
+        
+                            </div>
+            
+                            <!--Footer-->
+                            <div class="modal-footer">
+                                <div class="options">
+                                    <p>Ya eres miembro? <a [routerLink]="['/login']"> Ingresa!</a></p>
+                                    
+                                </div>
+                            </div>
+                       
+                        </div>
+
+
+
+                        </div>
+
+                    
+                        
+              <div class="salto"></div>
+               
+                   

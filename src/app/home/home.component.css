@@ -1,0 +1,19 @@
+.color-btn {
+    background-color:  #1c2331;
+}
+
+.border-btn{
+ border-radius: 30px
+ 
+}
+
+.icon-btn {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+
+.sidebar {
+    transition: all .3s;
+  }

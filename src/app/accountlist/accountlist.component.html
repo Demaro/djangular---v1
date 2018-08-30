@@ -1,0 +1,59 @@
+
+
+<mat-form-field class="wow fadeIn"data-wow-delay="0.5s">
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
+</mat-form-field>
+
+<div class="mat-elevation-z8 wow fadeIn" data-wow-delay="0.7s">
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 " >
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+    <!-- Codigo Column -->
+    <ng-container matColumnDef="codigo">
+      <th mat-header-cell *matHeaderCellDef> Codigo </th>
+      <td mat-cell *matCellDef="let element"> {{ element.codigo}} </td>
+    </ng-container>
+
+  <!-- Codigo completo Column -->
+  <ng-container matColumnDef="codigo_completo">
+    <th mat-header-cell *matHeaderCellDef> Codigo completo </th>
+    <td mat-cell *matCellDef="let element"> {{ element.codigo_completo}} </td>
+  </ng-container>
+
+  <!-- Nombre Column -->
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+
+  <!-- Descripcion Column -->
+  <ng-container matColumnDef="descripcion">
+    <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+    <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+  </ng-container>
+
+    <!-- level Column -->
+    <ng-container matColumnDef="level">
+      <th mat-header-cell *matHeaderCellDef> Level </th>
+      <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+    </ng-container>
+
+        <!-- parent Column -->
+  <ng-container matColumnDef="parent">
+      <th mat-header-cell *matHeaderCellDef> Parent </th>
+      <td mat-cell *matCellDef="let element"> {{element.parent}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

@@ -1,0 +1,61 @@
+<div class="col-sm-6 offset-sm-3" >
+
+
+
+<div class="card wow fadeInDown" style="width: 100%;" >
+    <div class="card-body">
+                        <!--     Header-->
+                      
+                       
+<h3><i class="fa fa-lock"></i> Acceso</h3>
+                     
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+
+    
+        <div class="md-form">
+            <i class="fa fa-user prefix color"></i>
+            <input type="text" formControlName="username" [mdbValidate]="false"  id="orangeForm-username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" class="form-control" mdbInputDirective>
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required" class="error">Este campo es obligatorio</div>
+                </div>
+            <label for="orangeForm-username">Nombre de usuario</label>
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-lock prefix color"></i>
+            <input type="password" formControlName="password" [mdbValidate]="false" id="orangeForm-password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" class="form-control" mdbInputDirective>
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required" class="error">Este campo es obligatorio</div>
+            </div>
+            <label for="orangeForm-password">Contraseña</label>
+          </div>
+          
+    </div>
+
+    <div class="form-group margin">
+        
+        <button [disabled]="loading" class="btn btn-primary waves-light" mdbWavesEffect>Acceder</button>
+       
+        <div *ngIf="loading" class="loader white btn-floating btn-lg ">
+                
+                </div>
+
+    </div>
+</form>
+
+                    </div>
+    
+                    <!--Footer-->
+                    <div class="modal-footer">
+                        <div class="options">
+                         <!--   <p>No eres miembro? <a [routerLink]="['/register']"> Registrate!</a></p> -->
+                            
+                        </div>
+                    </div>
+
+                </div>
+<div class="salto"></div>
+
+                </div>
+

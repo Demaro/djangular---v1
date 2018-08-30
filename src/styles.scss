@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// bootstrap style toast
+// or import a bootstrap 4 alert styled design (SASS ONLY)
+// should be after your bootstrap imports, it uses bs4 variables, mixins, functions
+
+// if you'd like to use it without importing all of bootstrap it requires
+
+
+.mat-snack-bar-container {
+    
+        padding: 25px 24px !important;
+       
+    }
+
+
+body{
+    background-color: #f7f6f0;
+}
