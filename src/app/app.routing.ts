@@ -4,12 +4,13 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from '../app/login/login.component';
 
 import { AuthSaveComponent } from './auth-save/auth-save.component';
-
+import { RegisterComponent } from '../app/register/register.component';
 
 
 const appRoutes: Routes = [
    { path: '', component: HomeComponent,},
    { path: 'login', component: LoginComponent },
+   { path: 'register', component: RegisterComponent },
 
 
 

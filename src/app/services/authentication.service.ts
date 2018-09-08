@@ -49,6 +49,14 @@ export class AuthenticationService {
             }));
     }
 
+    register(first_name: string, username: string, email: string, password: string){
+        return this.http.post<any>('http://127.0.0.1:8000/api/usuarios/registrar/',  { first_name: first_name, username: username, email: email, password: password })
+        .pipe(map(user => {
+         
+
+        }));
+    }
+
  
     logout() {
 

@@ -18,7 +18,7 @@ import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
   MatSortModule, MatTableModule } from "@angular/material";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+import { RegisterComponent } from './register/register.component';
 
 import { environment } from '../environments/environment';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -39,6 +39,7 @@ import { AccountlistComponent } from './accountlist/accountlist.component';
     ServicesComponent,
     HomeComponent,
     LoginComponent,
+    RegisterComponent,
     AuthSaveComponent,
     SnackbarComponent,
     AccountlistComponent,
