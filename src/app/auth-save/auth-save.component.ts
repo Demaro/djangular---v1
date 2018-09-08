@@ -18,6 +18,10 @@ export class AuthSaveComponent implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (localStorage.getItem('currentUser')) {
       this.auth.authenticated = true;
+      this.auth.username_get = this.auth.userCurrent.name
+
+      console.log(this.auth.userCurrent.name)
+      console.log(this.auth.username_get)
       //console.log(this.auth.authenticated)
         // logged in so return true
         return true;

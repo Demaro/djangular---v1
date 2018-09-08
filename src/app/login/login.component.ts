@@ -77,6 +77,8 @@ export class LoginComponent implements OnInit {
                     this.authenticationService.userCurrent = JSON.parse(localStorage.getItem('currentUser'));
                     //console.log(this.authenticationService.userCurrent)
                     this.authenticationService.authenticated = true;
+                    this.authenticationService.username_get = this.authenticationService.userCurrent.name
+                    console.log(this.authenticationService.userCurrent)
                     //console.log(this.authenticationService.authenticated)
                     this.router.navigate([this.returnUrl]);
                     this.loading = false;
@@ -84,8 +86,8 @@ export class LoginComponent implements OnInit {
                 
                 error =>  {
                     
-
-                    this.error = "No se puede iniciar sesión con las credenciales proporcionadas"
+                    this.error1 = error.error.w.toString()
+                    this.error = this.error1
                     this.loading = false; 
                     
 
@@ -106,6 +108,8 @@ export class LoginComponent implements OnInit {
                     
                 });
     }
+
+
 
 }
 

@@ -13,6 +13,7 @@ export class AuthenticationService {
     newRegex = "";
     newRegex_reg = "";
     newRegex_reg2 = "";
+    username_get = "";
    
 
     // control de errores api login auth:
@@ -25,15 +26,15 @@ export class AuthenticationService {
 
     // contiene datos que retorna api rest-auth-login
     userCurrent: any;
-
-    URL_BASE = "http://api-erp-dev.medinet.cl";
+    
+    URL_BASE = "http://127.0.0.1:8000/api/usuarios";
 
 
     // http 1 envio de datos, metodo POST, obtiene data, token y guarda en localStorage.
     // 
     
-    login(username: string, password: string) {
-        return this.http.post<any>(this.URL_BASE + '/rest-auth/login/', { username: username, password: password })
+    login(email: string, password: string) {
+        return this.http.post<any>(this.URL_BASE + '/auth-token/', { email: email, password: password })
             .pipe(map(user => {
                 // login successful si esta jwt token en response:
                 if (user && user.token) {

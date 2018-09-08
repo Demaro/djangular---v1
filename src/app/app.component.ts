@@ -21,6 +21,10 @@ ngOnInit(){
 
   this.auth.userCurrent = JSON.parse(localStorage.getItem('currentUser'));
 
+  console.log(this.auth.userCurrent)
+
+  this.auth.username_get = this.auth.userCurrent.name
+
 
   if (localStorage.getItem('currentUser')) {
     this.auth.authenticated = true;

@@ -26,9 +26,16 @@
           </a>
         </li>
     -->
-      <button type="button" class="btn btn-success waves-effect- waves-ight dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user"></i>&nbsp;&nbsp; Admin
-      </button>
+    <li class="nav-item wow fadeInRight" mdbDropdown>
+        <button mdbDropdownToggle type="button" mdbBtn color="primary" class="btn btn-success waves-effect- waves-ight dropdown-toggle waves-light" mdbWavesEffect>
+                <i class="fas fa-user"></i>&nbsp;&nbsp;{{ auth.username_get }}
+        </button>
+    
+        <div class="dropdown-menu dropdown-primary dropdown-menu-right">
+            <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Cuenta</a>
+            <a class="dropdown-item" [routerLink]="['login']" href="#"><i class="fas fa-power-off"></i> Cerrar Sesión</a>
+        </div>
+       </li>
       <div class="dropdown-menu dropdown-menu-right">
         <button  (click)="logout()" [routerLink]="['login']" class="dropdown-item" type="button"> <i class="fas fa-power-off"></i> Cerrar Sesión</button>
       </div>
@@ -82,8 +89,8 @@
                               
                                 <h6 class="mb-1 text-center">
 
-                                    Prueba tecnica Frontend,
-                                    Sistemas Expertos
+                                    Djangular - lista de cuentas,
+                                    Open source
                                     <br>
                                     Angular 6, Material, mdbootstrap, Api REST.
                                     <br>
@@ -122,7 +129,7 @@
                             </li>
    -->
                             <li class="list-inline-item">
-                                    <a target="_blank" href="https://github.com/Demaro/Prueba-SEIS" class="btn-floating btn-sm btn-tw mx-1 waves-effect waves-light border-btn">
+                                    <a target="_blank" href="https://github.com/Demaro/djangular-frontend-v1" class="btn-floating btn-sm btn-tw mx-1 waves-effect waves-light border-btn">
                                         <i class="fab fa-github icon-btn"> </i>
                                     </a>
                                 </li>

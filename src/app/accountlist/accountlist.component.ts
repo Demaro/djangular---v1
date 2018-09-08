@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/internal/Observable';
   styleUrls: ['./accountlist.component.scss']
 })
 export class AccountlistComponent implements OnInit {
-  displayedColumns: string[] = ['codigo', 'codigo_completo', 'nombre','level', 'parent' ];
+  displayedColumns: string[] = ['id', 'username', 'first_name','email', ];
   dataSource: any;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
