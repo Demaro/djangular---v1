@@ -1,4 +1,4 @@
-# Prueba Sistemas Expertos - Frontend Developer
+# Djangular - lista de cuentas - Full Stack
 
 Este Proyecto esta desarrollado con Angular 6.
 
