@@ -13,7 +13,7 @@ Api http backend (Django REST framework).
 
 4 - ng serve
 
-5 - ingrese sesion como admin.
+5 - ingrese sesion como usuario.
 
 6 - filtre tabla dinamica por nombre de la cuenta.
 
