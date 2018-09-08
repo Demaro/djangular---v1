@@ -1,4 +1,4 @@
-# Djangular - lista de cuentas - Full Stack
+# Djangular - lista de cuentas - Frontend
 
 Este Proyecto esta desarrollado con Angular 6.
 
