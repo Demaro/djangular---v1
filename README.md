@@ -1,6 +1,7 @@
 # Djangular - lista de cuentas - Frontend
 
-Este Proyecto esta desarrollado con Angular 6.
+Este Proyecto esta desarrollado con Angular 6. 
+Api http backend (Django REST framework).
 
 # Comenzar
 
